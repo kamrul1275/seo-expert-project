@@ -37,4 +37,6 @@ Route::get('/',[UserController::class,'Index']);
 Route::get('/signup',[UserController::class,'Signup'])->name('user.signup');
 
 
+Route::get('/user/login',[UserController::class,'Login'])->name('user.login');
+
 

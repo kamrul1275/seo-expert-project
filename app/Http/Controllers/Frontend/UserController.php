@@ -23,8 +23,14 @@ class UserController extends Controller
 
 
 
+    public function Login($var = null)
+    {
+    return view('Frontend.body.login');
 
-  
+    } // end methood
+
+
+
 
 
 

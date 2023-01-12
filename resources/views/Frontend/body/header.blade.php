@@ -91,7 +91,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.html">Login</a>
+              <a class="nav-link" href="{{ route('user.login') }}">Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link btn btn-white" href="{{ route('user.signup') }}">Sign Up</a>
