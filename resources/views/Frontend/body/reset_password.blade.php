@@ -9,7 +9,7 @@
     <meta name="description" content="" />
     <meta name="keywords" content="content" />
 
-    <title>Log In | SEO Content</title>
+    <title>Forgot Password | SEO Content</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -34,63 +34,49 @@
     />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('frontend/assets/images/icons/favicon.ico')}}" />
   </head>
 
+
   <body>
-    <main class="section-login">
-      <section class="section-login--logo">
+    <main class="section-forgot-password">
+      <section class="section-forgot-password--logo">
         <a href="index.html">
-          <img src="{{ asset('frontend/assets/images/logo.png')}}" alt="logo" class="img-fluid" />
+          <img src="{{asset('frontend/assets/images/logo.png') }}" alt="logo" class="img-fluid" />
         </a>
       </section>
 
-      <section class="section-login--form">
+      <section class="section-forgot-password--form">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-5">
               <div class="card">
-                <div class="card-title">Sign In</div>
+                <div class="card-title">Forgot Password</div>
                 <div class="card-body">
 
-                <form method="POST" action="{{ route('login') }}">
-                     @csrf
+                <form method="POST" action="{{ route('password.store') }}">
+                      @csrf
+
+                         <!-- Password Reset Token -->
+        <input type="hidden" name="token" value="">
+
+
                     <div class="mt-3">
-                      <label for="email" class="form-label">Email</label>
+                      <label for="" class="form-label">Email</label>
                       <input
-                        type="email" id="email"
+                        type="email"
                         class="form-control u-box-shadow-1"
-                        name="email" required
+                        name="email" id="email"
                       />
                     </div>
-                    <div class="mt-3">
-                      <label for="password" class="form-label">Password</label>
-                      <input
-                        type="password"  id="password"
-                        class="form-control u-box-shadow-1"
-                        name="password" required
-                      />
-                    </div>
-                    <div class="mt-5">
+                    <div class="my-5">
 
-                    <input type="submit" class="btn btn-green" value="Sign In" />
-
+                  <input type="submit" class="btn btn-green" value="Request Password" />
                     </div>
                   </form>
-                  <div class="links">
-                    <p>
-                      <a href="{{ route('user.signup')}}">Need an account?</a>
-                      <a href="{{ url('/forgot-password') }}">Forgot Password?</a>
-                    </p>
-                  </div>
-                  <div class="back-button">
-                    <a href="{{ url('/') }}">
-                      <i class="bi bi-arrow-left-circle"></i>
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
